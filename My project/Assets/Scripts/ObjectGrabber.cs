@@ -7,6 +7,7 @@ public class ObjectGrabber : MonoBehaviour
 {
 
     private GameObject _grabbedObject;
+    private Rigidbody _grabbedRigidbody;
     private GameObject _hands;
     private GameObject _player;
     private bool _isHeld;
@@ -20,16 +21,36 @@ public class ObjectGrabber : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // if (Input.GetKey(KeyCode.E) && !_isHeld)
+        // {
+        //     RaycastHit hit;
+        //     if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity))
+        //     {
+        //         Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
+        //         if (hit.transform.CompareTag("Object"))
+        //         {
+        //             _grabbedObject = hit.transform.gameObject;
+        //             _grabbedRigidbody = _grabbedObject.GetComponent<Rigidbody>();
+        //             _grabbedRigidbody.constraints = RigidbodyConstraints.FreezeRotation;
+        //             _grabbedRigidbody.useGravity = false;
+        //             _isHeld = true;
+        //         }
+        //     }
+        //     
+        // }
+        
         if (Input.GetKey(KeyCode.E) && !_isHeld)
         {
             RaycastHit hit;
-            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity))
+            if (Physics.SphereCast(transform.position, 0.125f, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity))
             {
-                Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
+                //Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
                 if (hit.transform.CompareTag("Object"))
                 {
                     _grabbedObject = hit.transform.gameObject;
-                    hit.transform.gameObject.GetComponent<Rigidbody>().useGravity = false;
+                    _grabbedRigidbody = _grabbedObject.GetComponent<Rigidbody>();
+                    _grabbedRigidbody.constraints = RigidbodyConstraints.FreezeRotation;
+                    _grabbedRigidbody.useGravity = false;
                     _isHeld = true;
                 }
             }
@@ -38,7 +59,8 @@ public class ObjectGrabber : MonoBehaviour
         
         if (Input.GetKeyUp(KeyCode.E) && _isHeld)
         {
-            _grabbedObject.gameObject.GetComponent<Rigidbody>().useGravity = true;
+            _grabbedRigidbody.constraints = RigidbodyConstraints.None;
+            _grabbedRigidbody.useGravity = true;
             _grabbedObject = null;
             _isHeld = false;
         }
