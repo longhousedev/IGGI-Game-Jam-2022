@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class PlynthTrigger : MonoBehaviour
 {
-    public GameObject Spawn;
+    public GameObject SpawnHouses;
+    public GameObject ToggleTrees;
 
     [SerializeField] private GameObject Hammer;
+    [SerializeField] private GameObject Axe;
     //private AudioSource source;
 
     void Start()
@@ -20,7 +22,13 @@ public class PlynthTrigger : MonoBehaviour
         {
             //source.Play();
             Debug.Log("OBJECT DETECTED");
-            Spawn.SetActive(false);
+            SpawnHouses.SetActive(false);
+        }
+        if (other.gameObject == Axe)
+        {
+            //source.Play();
+            Debug.Log("OBJECT DETECTED");
+            ToggleTrees.SetActive(false);
         }
 
     }
@@ -30,7 +38,13 @@ public class PlynthTrigger : MonoBehaviour
         {
             //source.Play();
             Debug.Log("Object Removed");
-            Spawn.SetActive(true);
+            SpawnHouses.SetActive(true);
+        }
+        if (other.gameObject == Axe)
+        {
+            //source.Play();
+            Debug.Log("Object Removed");
+            ToggleTrees.SetActive(true);
         }
     }
 }
