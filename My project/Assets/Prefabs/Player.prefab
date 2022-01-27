@@ -95,8 +95,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba3c8fdafe55d7545977c701b461c898, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 30
-  jumpHeight: 50
+  speed: 10
+  jumpHeight: 5
 --- !u!1 &592628943159031988
 GameObject:
   m_ObjectHideFlags: 0
@@ -281,7 +281,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d265803bb49edef46b194a59fee4d666, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensitivity: 1000
+  sensitivity: 250
 --- !u!114 &592628943259399519
 MonoBehaviour:
   m_ObjectHideFlags: 0
