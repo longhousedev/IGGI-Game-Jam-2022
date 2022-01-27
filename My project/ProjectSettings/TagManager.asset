@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Hammer
+  - Hands
+  - Head
+  - Object
   layers:
   - Default
   - TransparentFX
