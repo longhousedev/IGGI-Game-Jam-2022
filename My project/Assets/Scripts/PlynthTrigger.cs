@@ -22,7 +22,7 @@ public class PlynthTrigger : MonoBehaviour
         {
             //source.Play();
             Debug.Log("OBJECT DETECTED");
-            SpawnHouses.SetActive(false);
+            SpawnHouses.SetActive(true);
         }
         if (other.gameObject == Axe)
         {
@@ -38,7 +38,7 @@ public class PlynthTrigger : MonoBehaviour
         {
             //source.Play();
             Debug.Log("Object Removed");
-            SpawnHouses.SetActive(true);
+            SpawnHouses.SetActive(false);
         }
         if (other.gameObject == Axe)
         {
