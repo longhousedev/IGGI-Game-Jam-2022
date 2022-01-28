@@ -10,6 +10,8 @@ public class PlynthTrigger : MonoBehaviour
     public GameObject GiantMushrooms;
     public GameObject Farms;
     public GameObject Libraries;
+    public GameObject Castles;
+    public GameObject MoreHouses;
 
     [SerializeField] private GameObject Hammer;
     [SerializeField] private GameObject Axe;
@@ -17,6 +19,8 @@ public class PlynthTrigger : MonoBehaviour
     [SerializeField] private GameObject RedShroom;
     [SerializeField] private GameObject Sickle;
     [SerializeField] private GameObject Book;
+    [SerializeField] private GameObject Sword;
+    [SerializeField] private GameObject Mallet;
 
     //private AudioSource source;
 
@@ -63,6 +67,18 @@ public class PlynthTrigger : MonoBehaviour
             Debug.Log("Book DETECTED");
             Libraries.SetActive(true);
         }
+        if (other.gameObject == Sword)
+        {
+            //source.Play();
+            Debug.Log("Sword DETECTED");
+            Castles.SetActive(true);
+        }
+        if (other.gameObject == Mallet)
+        {
+            //source.Play();
+            Debug.Log("Mallet DETECTED");
+            MoreHouses.SetActive(true);
+        }
     }
     private void OnTriggerExit(Collider other)
     {
@@ -101,6 +117,18 @@ public class PlynthTrigger : MonoBehaviour
             //source.Play();
             Debug.Log("Book Removed");
             Libraries.SetActive(false);
+        }
+        if (other.gameObject == Sword)
+        {
+            //source.Play();
+            Debug.Log("Sword Removed");
+            Castles.SetActive(false);
+        }
+        if (other.gameObject == Mallet)
+        {
+            //source.Play();
+            Debug.Log("Mallet Removed");
+            MoreHouses.SetActive(false);
         }
 
     }
