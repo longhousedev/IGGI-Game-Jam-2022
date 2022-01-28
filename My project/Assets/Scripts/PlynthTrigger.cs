@@ -25,6 +25,8 @@ namespace UnityCore
             public GameObject Theatres;
             public GameObject Cafes;
             public GameObject Wizardtower;
+            public GameObject Moarhooses;
+            public GameObject Factory;
             public AudioController audioController;
 
             [SerializeField] private GameObject Skull;
@@ -41,7 +43,8 @@ namespace UnityCore
             [SerializeField] private GameObject inkwelltheatre;
             [SerializeField] private GameObject Teapot;
             [SerializeField] private GameObject Wizardhat;
-
+            [SerializeField] private GameObject Screwdriver;
+            [SerializeField] private GameObject Cog;
 
             //private AudioSource source;
 
@@ -135,6 +138,20 @@ namespace UnityCore
                     RenderSettings.skybox = Night;
                 }
 
+
+                if (other.gameObject == Screwdriver)
+                {
+                    //source.Play();
+                    Debug.Log("Screwdriver DETECTED");
+                    Moarhooses.SetActive(true);
+                }
+
+                if (other.gameObject == Cog)
+                {
+                    //source.Play();
+                    Debug.Log("Cog DETECTED");
+                    Factory.SetActive(true);
+                }
             }
             private void OnTriggerExit(Collider other)
             {
@@ -216,6 +233,18 @@ namespace UnityCore
                 if (other.gameObject == Skull || other.gameObject == CrystalBall)
                 {
                     RenderSettings.skybox = Sky;
+                }
+                if (other.gameObject == Screwdriver)
+                {
+                    //source.Play();
+                    Debug.Log("Screwdriver Removed");
+                    Moarhooses.SetActive(false);
+                }
+                if (other.gameObject == Cog)
+                {
+                    //source.Play();
+                    Debug.Log("Cog Removed");
+                    Factory.SetActive(false);
                 }
             }
         }
