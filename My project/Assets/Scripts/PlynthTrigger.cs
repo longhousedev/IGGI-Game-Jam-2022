@@ -60,7 +60,7 @@ namespace UnityCore
                     //source.Play();
                     Debug.Log("Hammer DETECTED");
                     SpawnHouses.SetActive(true);
-                    audioController.PlayAudio(AudioType.ST_01, true);
+                    audioController.PlayAudio(AudioType.ST_01, true, 1.0f);
                 }
                 if (other.gameObject == Axe)
                 {
@@ -73,12 +73,14 @@ namespace UnityCore
                     //source.Play();
                     Debug.Log("JarofWater DETECTED");
                     Flood.SetActive(true);
+                    audioController.PlayAudio(AudioType.ST_03, true, 1.0f);
                 }
                 if (other.gameObject == RedShroom)
                 {
                     //source.Play();
                     Debug.Log("RedShroom DETECTED");
                     GiantMushrooms.SetActive(true);
+                    audioController.PlayAudio(AudioType.ST_04, true, 1.0f);
                 }
                 if (other.gameObject == Sickle)
                 {
@@ -97,6 +99,7 @@ namespace UnityCore
                     //source.Play();
                     Debug.Log("Sword DETECTED");
                     Castles.SetActive(true);
+                    audioController.PlayAudio(AudioType.ST_06, true, 1.0f);
                 }
                 if (other.gameObject == Mallet)
                 {
@@ -128,14 +131,17 @@ namespace UnityCore
                     //source.Play();
                     Debug.Log("Wizardhat DETECTED");
                     Wizardtower.SetActive(true);
+                    audioController.PlayAudio(AudioType.ST_07, true, 1.0f);
                 }
                 if (other.gameObject == Skull)
                 {
                     RenderSettings.skybox = BloodMoon;
+                    audioController.PlayAudio(AudioType.ST_02, true, 1.0f);
                 }
                 if (other.gameObject == CrystalBall)
                 {
                     RenderSettings.skybox = Night;
+                    audioController.PlayAudio(AudioType.ST_05, true, 1.0f);
                 }
 
 
@@ -160,7 +166,7 @@ namespace UnityCore
                     //source.Play();
                     Debug.Log("Hammer Removed");
                     SpawnHouses.SetActive(false);
-                    audioController.StopAudio(AudioType.ST_01, true);
+                    audioController.StopAudio(AudioType.ST_01, true, 1.0f);
                 }
                 if (other.gameObject == Axe)
                 {
@@ -173,12 +179,14 @@ namespace UnityCore
                     //source.Play();
                     Debug.Log("JarofWater Removed");
                     Flood.SetActive(false);
+                    audioController.StopAudio(AudioType.ST_03, true, 1.0f);
                 }
                 if (other.gameObject == RedShroom)
                 {
                     //source.Play();
                     Debug.Log("RedShroom Removed");
                     GiantMushrooms.SetActive(false);
+                    audioController.StopAudio(AudioType.ST_04, true, 1.0f);
                 }
                 if (other.gameObject == Sickle)
                 {
@@ -197,6 +205,7 @@ namespace UnityCore
                     //source.Play();
                     Debug.Log("Sword Removed");
                     Castles.SetActive(false);
+                    audioController.StopAudio(AudioType.ST_06, true, 1.0f);
                 }
                 if (other.gameObject == Mallet)
                 {
@@ -229,10 +238,13 @@ namespace UnityCore
                     //source.Play();
                     Debug.Log("Wizardhat Removed");
                     Wizardtower.SetActive(false);
+                    audioController.StopAudio(AudioType.ST_07, true, 1.0f);
                 }
                 if (other.gameObject == Skull || other.gameObject == CrystalBall)
                 {
                     RenderSettings.skybox = Sky;
+                    audioController.StopAudio(AudioType.ST_02, true, 1.0f);
+                    audioController.StopAudio(AudioType.ST_05, true, 1.0f);
                 }
                 if (other.gameObject == Screwdriver)
                 {
@@ -246,6 +258,7 @@ namespace UnityCore
                     Debug.Log("Cog Removed");
                     Factory.SetActive(false);
                 }
+
             }
         }
     }
