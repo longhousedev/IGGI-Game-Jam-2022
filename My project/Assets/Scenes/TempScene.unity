@@ -94775,7 +94775,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 879c52ca7ee961b4ca51dd4800bce7a7, type: 2}
     - target: {fileID: 3396563970454337088, guid: 0bea1df4a8c5af842bce4066ff0c84ef, type: 3}
       propertyPath: m_Convex
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0bea1df4a8c5af842bce4066ff0c84ef, type: 3}
