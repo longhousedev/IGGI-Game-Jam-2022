@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 5c57bb9da366e944a8f4ae9be4f413ec, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44664735, g: 0.49649262, b: 0.5748604, a: 1}
+  m_IndirectSpecularColor: {r: 0.42723584, g: 0.707919, b: 0.80659294, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -10472,6 +10472,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10630d3a140b5e744861f0e19e7f5e7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Sky: {fileID: 2100000, guid: 5c57bb9da366e944a8f4ae9be4f413ec, type: 2}
+  Night: {fileID: 2100000, guid: 52fcefd712182d743a781fde12426775, type: 2}
+  BloodMoon: {fileID: 2100000, guid: 7ed994c1997814049b44c36a823bba6c, type: 2}
   SpawnHouses: {fileID: 880744927}
   ToggleTrees: {fileID: 1345612959}
   Flood: {fileID: 881981793}
@@ -10485,6 +10488,8 @@ MonoBehaviour:
   Cafes: {fileID: 707116450}
   Wizardtower: {fileID: 7448543652640049558}
   audioController: {fileID: 300658168}
+  Skull: {fileID: 811098472}
+  CrystalBall: {fileID: 1754411362}
   Hammer: {fileID: 41155484}
   Axe: {fileID: 296100211}
   JarofWater: {fileID: 1408476752}
@@ -91646,7 +91651,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 879c52ca7ee961b4ca51dd4800bce7a7, type: 2}
     - target: {fileID: 3396563970454337088, guid: 0bea1df4a8c5af842bce4066ff0c84ef, type: 3}
       propertyPath: m_Convex
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0bea1df4a8c5af842bce4066ff0c84ef, type: 3}

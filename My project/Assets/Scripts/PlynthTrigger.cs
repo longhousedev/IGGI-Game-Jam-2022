@@ -10,6 +10,9 @@ namespace UnityCore
 
         public class PlynthTrigger : MonoBehaviour
         {
+            public Material Sky;
+            public Material Night;
+            public Material BloodMoon;
             public GameObject SpawnHouses;
             public GameObject ToggleTrees;
             public GameObject Flood;
@@ -24,6 +27,8 @@ namespace UnityCore
             public GameObject Wizardtower;
             public AudioController audioController;
 
+            [SerializeField] private GameObject Skull;
+            [SerializeField] private GameObject CrystalBall;
             [SerializeField] private GameObject Hammer;
             [SerializeField] private GameObject Axe;
             [SerializeField] private GameObject JarofWater;
@@ -121,6 +126,14 @@ namespace UnityCore
                     Debug.Log("Wizardhat DETECTED");
                     Wizardtower.SetActive(true);
                 }
+                if (other.gameObject == Skull)
+                {
+                    RenderSettings.skybox = BloodMoon;
+                }
+                if (other.gameObject == CrystalBall)
+                {
+                    RenderSettings.skybox = Night;
+                }
 
             }
             private void OnTriggerExit(Collider other)
@@ -199,6 +212,10 @@ namespace UnityCore
                     //source.Play();
                     Debug.Log("Wizardhat Removed");
                     Wizardtower.SetActive(false);
+                }
+                if (other.gameObject == Skull || other.gameObject == CrystalBall)
+                {
+                    RenderSettings.skybox = Sky;
                 }
             }
         }
