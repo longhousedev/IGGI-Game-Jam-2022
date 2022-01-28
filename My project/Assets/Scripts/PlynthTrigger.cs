@@ -8,11 +8,15 @@ public class PlynthTrigger : MonoBehaviour
     public GameObject ToggleTrees;
     public GameObject Flood;
     public GameObject GiantMushrooms;
+    public GameObject Farms;
+    public GameObject Libraries;
 
     [SerializeField] private GameObject Hammer;
     [SerializeField] private GameObject Axe;
     [SerializeField] private GameObject JarofWater;
     [SerializeField] private GameObject RedShroom;
+    [SerializeField] private GameObject Sickle;
+    [SerializeField] private GameObject Book;
 
     //private AudioSource source;
 
@@ -47,6 +51,18 @@ public class PlynthTrigger : MonoBehaviour
             Debug.Log("RedShroom DETECTED");
             GiantMushrooms.SetActive(true);
         }
+        if (other.gameObject == Sickle)
+        {
+            //source.Play();
+            Debug.Log("Sickle DETECTED");
+            Farms.SetActive(true);
+        }
+        if (other.gameObject == Book)
+        {
+            //source.Play();
+            Debug.Log("Book DETECTED");
+            Libraries.SetActive(true);
+        }
     }
     private void OnTriggerExit(Collider other)
     {
@@ -74,6 +90,19 @@ public class PlynthTrigger : MonoBehaviour
             Debug.Log("RedShroom Removed");
             GiantMushrooms.SetActive(false);
         }
+        if (other.gameObject == Sickle)
+        {
+            //source.Play();
+            Debug.Log("Sickle Removed");
+            Farms.SetActive(false);
+        }
+        if (other.gameObject == Book)
+        {
+            //source.Play();
+            Debug.Log("Book Removed");
+            Libraries.SetActive(false);
+        }
+
     }
 }
 
